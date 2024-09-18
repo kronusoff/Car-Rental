@@ -561,11 +561,10 @@ button, a { transition: var(--transition); }
   #GET START
 \*-----------------------------------*/
 
-.get-start .section-title { margin-bottom: 25px; }
-
 .get-start-list {
   display: grid;
   gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Карточки автоматически подстраиваются по ширине */
 }
 
 .get-start-card {
@@ -574,6 +573,10 @@ button, a { transition: var(--transition); }
   border-radius: var(--radius-18);
   border: 1px solid var(--white);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column; /* Карточки располагают содержимое вертикально */
+  justify-content: space-between; /* Равномерное распределение элементов внутри карточки */
+  min-height: 100%; /* Карточки растягиваются до одинаковой высоты */
 }
 
 .get-start-card:hover {
@@ -598,23 +601,8 @@ button, a { transition: var(--transition); }
 }
 
 .get-start-card .icon-1 {
-  --icon-card-bg: var(--mimi-pink);
-  --icon-card-color: var(--deep-cerise);
-}
-
-.get-start-card .icon-2 {
   --icon-card-bg: var(--columbia-blue);
   --icon-card-color: var(--carolina-blue);
-}
-
-.get-start-card .icon-3 {
-  --icon-card-bg: var(--honey-dew);
-  --icon-card-color: var(--medium-sea-green);
-}
-
-.get-start-card .icon-4 {
-  --icon-card-bg: var(--pale-purple-pantone);
-  --icon-card-color: var(--slate-blue);
 }
 
 .get-start-card .card-title {
@@ -624,12 +612,16 @@ button, a { transition: var(--transition); }
   margin-bottom: 15px;
 }
 
-.get-start-card .card-text { color: var(--independence); }
+.get-start-card .card-text {
+  color: var(--independence);
+  flex-grow: 1; /* Текст будет растягиваться, занимая доступное пространство */
+}
 
 .get-start-card .card-link {
   position: relative;
   color: var(--carolina-blue);
   width: max-content;
+  margin-top: auto; /* Перемещает ссылку в самый низ карточки */
 }
 
 .get-start-card .card-link::before {
@@ -643,7 +635,10 @@ button, a { transition: var(--transition); }
   transition: var(--transition);
 }
 
-.get-start-card .card-link:is(:hover, :focus)::before { width: 100%; }
+.get-start-card .card-link:is(:hover, :focus)::before {
+  width: 100%;
+}
+
 
 
 
@@ -1167,18 +1162,6 @@ button, a { transition: var(--transition); }
    */
 
   .get-start-list { grid-template-columns: repeat(4, 1fr); }
-
-
-
-  /**
-   * BLOG
-   */
-
-  .blog .has-scrollbar > li {
-    max-width: 340px;
-    scroll-snap-align: center;
-  }
-
 
 
   /**

@@ -5,7 +5,6 @@
  */
 
 const overlay = document.querySelector("[data-overlay]");
-const navbar = document.querySelector("[data-navbar]");
 const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 
