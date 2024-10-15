@@ -339,6 +339,91 @@ button, a { transition: var(--transition); }
 .main {
   padding-top: 150px;
 }
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 10; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+  transition: opacity 0.3s ease-in-out; /* Плавное появление */
+  opacity: 0; /* Для плавного перехода */
+}
+
+.modal.show {
+  display: block;
+  opacity: 1; /* Показываем с плавностью */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; 
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+  transition: transform 0.3s ease-out; /* Плавное выезжание */
+  transform: translateY(-50px); /* Начальное смещение */
+}
+
+.modal.show .modal-content {
+  transform: translateY(0); /* Плавное выезжание */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
 
 
 

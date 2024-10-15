@@ -124,10 +124,25 @@
           <div class="hero-banner"></div>
 
           <form action="" class="hero-form">
-
-            <button type="submit" class="btn">Заказать звонок</button>
-
+            <button type="button" class="btn" onclick="openModal()">Заказать звонок</button>
           </form>
+          
+          <!-- Модальное окно -->
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h3>Оставьте заявку и мы Вам перезвоним</h3>
+              <form action="">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" class="input-field" placeholder="Введите ваше имя" required>
+                
+                <label for="phone">Ваш мобильный телефон:</label>
+                <input type="tel" id="phone" name="phone" class="input-field" placeholder="Введите ваш телефон" required>
+                
+                <button type="submit" class="submit-btn">Отправить</button>
+              </form>
+            </div>
+          </div>
 
         </div>
       </section>
